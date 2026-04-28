@@ -1,4 +1,4 @@
-
+import '../public/css/styl.css';
 import{modal} from "./modules/modal.js";
 import {createSvgKata} from './modules/createSvgKata.js';
 import {scroll} from './modules/scroll.js';
