@@ -31,17 +31,21 @@ const disableScroll = () => {
 export function modal(type,id){
 const overlay = document.querySelector('.overlay');
 
+
+
+
+
 const openModal = function (event) {
 	overlay.classList.add('show');
-	//disableScroll()
 	document.addEventListener('keydown', escapeHandler);
 }
 const closeModal = function () {
+	const video = document.getElementById('videoKata');
 	overlay.classList.remove('show');
-	enableScroll()
 	document.removeEventListener('keydown', escapeHandler);
-
+    video.pause();//зупиняємо відео разом із звуком
 }
+
 const escapeHandler = (event) => {
 	if (event.code === 'Escape') {
 		closeModal();
@@ -54,10 +58,9 @@ overlay.addEventListener('click', (event) => {
 	}
 })
 
-
 	openModal()
-    renderModal('kata',id)
-	
-
+	if(type==='kata'){
+		renderModal('kata',id)
+	}
 
 }

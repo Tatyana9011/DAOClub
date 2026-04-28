@@ -272,13 +272,12 @@ z-index: 0;
    padding-left: 10%;
 }
 
-#kumiteBlock {
+.kumiteBlock {
   bottom: 0;
   right: 150px;
   padding-top: 35px;
-scroll-margin-top: 120px;
 }
-#zukiBlock,#testBlock{
+#kumiteBlock,#zukiBlock,#testBlock{
     scroll-margin-top: 120px;
 }
 .kata-info{
@@ -421,7 +420,6 @@ text-shadow:  1px 1px var(--colorShadow);
     justify-content:space-around;
 }
 .youTube{
- z-index: 5555;
  border-radius: 50%;
  background-color: #ffff;
  width: 50px;
@@ -431,7 +429,6 @@ text-shadow:  1px 1px var(--colorShadow);
  transition: all .3s ease-in-out;
 }
 .viber{
-    z-index: 5555;
     border-radius: 50%;
     background-color: #ffff;
     width: 50px;
@@ -442,7 +439,6 @@ text-shadow:  1px 1px var(--colorShadow);
 }
 
 .telegram{
-    z-index: 5555;
     border-radius: 50%;
     background-color: #ffff;
     width: 50px;
@@ -453,7 +449,6 @@ text-shadow:  1px 1px var(--colorShadow);
     transition: all .3s ease-in-out;
 }
 .instagramm{
-    z-index: 5555;
     border-radius: 50%;
     background-color: #ffff;
     width: 50px;

@@ -7,7 +7,7 @@ module.exports = {
   mode: 'development',
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, './public'),
     },
     allowedHosts: 'all',
     open: true,
@@ -28,6 +28,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      template: './public/index.html',
       title: 'Development',
     }),
     new CleanWebpackPlugin()

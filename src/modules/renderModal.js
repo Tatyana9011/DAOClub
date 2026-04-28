@@ -11,13 +11,16 @@ export function renderModal(type, id){
     newElem.classList.add('videoContent');
     newElem.innerHTML=`
     <button class="modal-close">x</button>
-	            <video controls width="600">
+	            <video id='videoKata' controls width="600">
                      <source src="video/${type}/${id}.mp4" type="video/mp4">
                      Ваш браузер не поддерживает видео
                 </video>`
                     
 
     modal.append(newElem); 
+
+    const video = document.getElementById('videoKata');
+    video.play();
 
         
 }

@@ -20,7 +20,7 @@ for (let i = 0; i < 26; i++) {
   rect.classList.add("zone");
   rect.dataset.id = i + 1;
 
-  svg.appendChild(rect);
+  svg?.appendChild(rect);
 }
 
     document.querySelectorAll('.zone').forEach(zone => {
