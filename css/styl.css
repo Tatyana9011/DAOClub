@@ -1,0 +1,570 @@
+@keyframes pulse{
+    0%{transform: scale3d(1,1,1);}
+    50% {transform: scale3d(1.05,1.05,1.05);}
+    100% {transform: scale3d(1,1,1);}
+}
+
+:root{
+    --colorBasicText: rgba(2, 39, 26, 0.5);
+    --colorShadow:  rgba(91, 92, 91, 0.4);
+    --colorWorn: rgba(240, 59, 35, 0.4);
+    --transition: transform .8s cubic-bezier(.02, .6, 0, 1);
+    --main-article-transform:translate3d(0,calc(var(--scrollTopY)/-7.5), 0);
+}
+
+* {
+  box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: var(--colorBasicText);
+    transform: all .3s ease;
+}
+p, h3{
+    margin: 0;
+    padding: 0;
+}
+
+p a:hover{
+    text-decoration: underline;
+}
+ul{
+       padding-inline-start: 10px;
+}
+b, strong {
+    font-weight: 700;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.55;
+    color: #000;
+    background-color: #fafafa;
+    font: 400 16px / 24px InterDisplay, Helvetica, Arial, sans-serif;
+
+}
+.up{
+    position: fixed;
+    font-size: 64px;
+    bottom: 10%;
+    right: 10%;
+    border-radius:50%;
+    color:#f4cb45;
+    transition: all 0.3s ease;
+}
+.up:hover{
+    font-size: 70px;
+    box-shadow:5px 10px 10px rgba(92, 92, 91, 0.8);
+}
+header{
+    position: fixed;
+    z-index: 20;
+   background-color:#fafafa;
+  background-size: cover;      /* 🔥 главное */
+  background-position: center; /* центрирование */
+  background-repeat: no-repeat;
+    width: 100%;
+}
+
+
+
+ .wrapper {
+    display: flex;
+    margin: 50px 0 0 0;
+    width: 98%;
+    padding-top: 100px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+.wrapper .container {
+  width: 100%;
+   display: flex;
+  margin: 0 auto;
+  padding: 0 15px;
+  align-items: flex-start;
+ 
+}
+img{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.header_nav{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--colorBasicText);
+}
+.header_logo{
+    display: flex;
+    align-items: center;
+    border-radius:50%;
+}
+.header_logo img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+ }
+.logo_text{
+    display: block;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+
+.header_nav ul {
+    position: relative;
+    list-style: none!important; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+
+.header_nav_item{
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 400;
+    font-variant: small-caps slashed-zero;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.header_nav_item:hover,
+.header_nav_item:focus{
+    text-shadow: 1px 1px var(--colorShadow);
+    text-decoration: underline;
+}
+
+
+.header_worn{
+    display: flex;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    color: var(--colorWorn);
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.senseiInfo-name{
+    font-size: 23px;
+}
+.container .clubPage{
+    padding: 0 70px 0 0;
+    width: calc(100% - 390px);
+    flex: 1;
+}
+.container .infoKarate{
+    width: 320px;
+    flex-shrink: 0;
+    scroll-margin-top: 100px;
+}
+
+.senseiInfo-avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin: 15px 30px 10px 0;
+    width: 200px;
+}
+.senseiInfo-text{
+    margin-top:15px;
+}
+.list-items{
+    display: inline-block;
+}
+
+ 
+ .education-title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+.education-karate-info{
+    position: relative;
+}
+
+.layer{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+	z-index:2;
+}
+.karate-info__base{
+z-index: 0;
+}
+
+.karate-info__middle
+{
+    position: absolute;
+    z-index: 1;
+}
+
+.venn {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  margin: 20px auto;
+}
+
+.circle{
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  background: #f4cb45;
+  opacity: 0;
+  transition:  all .3s ease-in-out;
+}
+
+.circle:hover{
+    opacity: 0.3;
+}
+.circle span{
+    width: 100px;
+    height: 50px;
+    opacity: 0;
+
+}
+.kihonBlock {
+  top: 0;
+  left: 50px;
+  padding-top: 10%;
+  padding-right: 10%;
+}
+.kataBlock {
+  top: 0;
+  right: 50px;
+   padding-top: 10%;
+   padding-left: 10%;
+}
+
+#kumiteBlock {
+  bottom: 0;
+  right: 150px;
+  padding-top: 35px;
+scroll-margin-top: 120px;
+}
+#zukiBlock,#testBlock{
+    scroll-margin-top: 120px;
+}
+.kata-info{
+    margin-bottom: 20px;
+    scroll-margin-top: 110px;
+}
+.image-container {
+   position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+}
+
+.bg {
+  width: 100%;
+  display: block;
+}
+
+span.zone{
+ transition: all 0.3s ease;
+}
+span.zone:hover{
+    text-decoration: underline;
+    color: rgba(255, 100, 0, 0.6);;
+text-shadow:  1px 1px var(--colorShadow);
+}
+.videoContent{
+    width: 100%;
+    height: 75%;
+   display: flex;
+   justify-content: center;
+    margin-top: 5%;
+}
+
+.overlayKata {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* зоны */
+.zone {
+  fill: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* hover эффект */
+.zone:hover {
+  fill: rgba(255, 200, 0, 0.4);
+}
+.zone.active {
+  fill: rgba(255, 100, 0, 0.6);
+}
+
+
+.dachi-info{
+    scroll-margin-top: 110px;
+}
+
+.uche-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    scroll-margin-top: 120px;
+}
+
+.overlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.overlay.show {
+    display: flex;
+}
+
+.modal {
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    background-color: #ffff;
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+}
+
+.modal-close {
+    position: absolute;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: transparent;
+    right: 15px;
+    font-size: 24px;
+    border: none;
+}
+
+.mob-menu-btn {
+    display: none;
+    margin: 24px 10px 0 20px;
+  }
+.mob-menu-btn span {
+    display: block;
+    height: 3px;
+    margin-bottom: 4px;
+    width: 30px;
+    background: #22282e;
+  }
+
+.open {
+    right: 0 !important;
+  }
+.card_variation{
+    height: 100%;
+    padding-bottom: 50px;
+}
+.title-socialMadia{
+   display: flex; 
+   text-decoration: underline;
+   align-items:center;
+   justify-content:center;
+   margin-top: 20px;
+   margin-bottom: 10px;
+}
+.socialMadia{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+.youTube{
+ z-index: 5555;
+ border-radius: 50%;
+ background-color: #ffff;
+ width: 50px;
+ height: 50px;
+ cursor: pointer;
+ display: flex;
+ transition: all .3s ease-in-out;
+}
+.viber{
+    z-index: 5555;
+    border-radius: 50%;
+    background-color: #ffff;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    transition: all .3s ease-in-out;
+}
+
+.telegram{
+    z-index: 5555;
+    border-radius: 50%;
+    background-color: #ffff;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.instagramm{
+    z-index: 5555;
+    border-radius: 50%;
+    background-color: #ffff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.instagramm a img{
+    border-radius:50%;
+}
+
+.instagramm:hover,
+.telegram:hover,
+.viber:hover,
+.youTube:hover{
+    box-shadow: 5px 10px 10px rgba(91, 92, 91, 0.8);
+}
+
+
+  @media (max-width: 991px) {
+    .mob-menu-btn {
+        display: block;
+        position: fixed;
+        right: 5vw;
+        margin: 24px 5px 0 20px;
+        z-index: 555;
+    }
+       .header_nav_list{
+    display: none;
+    flex-direction: column;
+    margin: 0;
+    top: 0;
+    right: -410px;
+    background: rgba(124, 106, 5, 0.5);
+    height: 100%;
+    width: 370px;
+    max-width: 100%;
+    z-index: 1000;
+    overflow-y: no-scroll;
+    padding-top: 30px;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+}
+
+  .header_nav_list.open{
+     position: fixed;
+     display: flex;
+  }
+ 
+ .up{
+    right: 1%;
+    bottom: 4%;
+ }
+ 
+                   
+    .header_nav ul{
+         display: none;
+        flex-direction: column;
+         color:#ffff ;
+    }
+
+        .header_nav_item a{
+        color:#ffff ;
+    }
+
+   .wrapper .container {
+   display: flex;
+   flex-direction: column;
+    align-items: flex-start;
+}
+.container .clubPage{
+    width: 100%;
+}
+.header_logo img{
+    width: 50px;
+    height: 50px;
+}
+.modal{
+    width: auto;
+}
+}
+  @media (max-width: 766px) {
+       .senseiInfo-avatar{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ float:left;
+ margin: 15px 0 10px 0;
+
+
+       }   
+ 
+   }
+
+ @media (max-width: 860px) {
+ 
+ 
+}
+ 
+ 
+
+  @media (max-width: 767px) {
+            }
+
+  @media (max-width: 500px) {
+       
+}
+@media (max-width: 370px) {
+}          
